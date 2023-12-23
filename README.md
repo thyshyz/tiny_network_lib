@@ -17,6 +17,21 @@
 - 编辑器：`vscode`
 - 项目构建：`cmake 3.16.3`
 
+## 构建项目并快速使用
+```
+mkdir build
+cd build
+cmake ..
+make install
+cd ..
+cd example
+./echoServer
+
+另起一个终端:
+nc 127.0.0.1 8080
+hello
+```
+
 ## 模块说明
 ### 1. Buffer模块
 #### 设计缓冲区的原因
