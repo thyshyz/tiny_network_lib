@@ -1,7 +1,7 @@
 # 网络程序设计期末大作业——网络并发处理
 
 ## 项目总览
-项目地址：https://gitee.com/thyshy_li/webserver
+项目地址：https://github.com/thyshyz/tiny_network_lib
 
 本项目参考了[muduo网络库](https://github.com/chenshuo/muduo)，实现了基于Reactor的多线程网络库，使用C++ 11标准，不依赖第三方库。项目具有以下特点：
 - 项目底层使用了Epoll+LT模式的非阻塞I/O复用模型。
