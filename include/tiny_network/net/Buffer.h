@@ -93,6 +93,13 @@ public:
         writeIndex_ += len;
     }
 
+    const char* findCRLF() const
+    {
+        // FIXME: replace with memmem()?
+        const char* crlf = std::search(peek(), beginWrite(), kCRLF, kCRLF+2);
+        return crlf == beginWrite() ? NULL : crlf;
+    }
+
     //返回buffer上writeindex的地址
     const char *beginWrite() const{
         return begin_() + writeIndex_;
@@ -109,6 +116,7 @@ private:
     std::vector<char> buffer_;
     size_t readIndex_;
     size_t writeIndex_;
+    static const char kCRLF[];
     inline size_t size_() const{
         return buffer_.size();
     }

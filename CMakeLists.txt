@@ -10,6 +10,7 @@ include_directories(
     ${PROJECT_SOURCE_DIR}/src/net
     ${PROJECT_SOURCE_DIR}/src/poller
     ${PROJECT_SOURCE_DIR}/src/logger
+    ${PROJECT_SOURCE_DIR}/src/http
     )
 
 # 包含这些目录下的.cc文件
@@ -17,6 +18,7 @@ aux_source_directory(${PROJECT_SOURCE_DIR}/src/base SRC_BASE)
 aux_source_directory(${PROJECT_SOURCE_DIR}/src/net SRC_NET)
 aux_source_directory(${PROJECT_SOURCE_DIR}/src/poller SRC_POLLER)
 aux_source_directory(${PROJECT_SOURCE_DIR}/src/logger SRC_LOG)
+aux_source_directory(${PROJECT_SOURCE_DIR}/src/HTTP SRC_HTTP)
 
 
 # 设置编译选项
@@ -32,6 +34,7 @@ add_library(tiny_network SHARED
             ${SRC_NET}
             ${SRC_POLLER}
             ${SRC_LOG}
+            ${SRC_HTTP}
             )
 
 # 目标动态库所需连接的库（这里需要连接libpthread.so）
@@ -49,3 +52,5 @@ install(DIRECTORY ${PROJECT_SOURCE_DIR}/src/ DESTINATION include/tiny_network
 
 # 加载example
 add_subdirectory(example)
+# 加载http
+add_subdirectory(src/http)

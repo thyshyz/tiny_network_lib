@@ -3,6 +3,8 @@
 #include <unistd.h>
 #include "Buffer.h"
 
+const char Buffer::kCRLF[] = "\r\n";
+
 //从fd上读取数据到buffer上，然后用户再从buffer读走数据
 //从socket读到buffer上的方法是使用readv先读到buffer上
 //如果buffer空间不够就用一个栈上的空间额外接受
