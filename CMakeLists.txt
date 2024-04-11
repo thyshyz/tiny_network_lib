@@ -54,3 +54,4 @@ install(DIRECTORY ${PROJECT_SOURCE_DIR}/src/ DESTINATION include/tiny_network
 add_subdirectory(example)
 # 加载http
 add_subdirectory(src/http)
+add_subdirectory(src/logger/test)
